@@ -1,0 +1,38 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+
+
+bool IsArithmeticProgression(int* arr, int size = 3){
+    int d = arr[1]-arr[0];
+    for(int i = 1; i<size-1;i++)
+    {
+        if(arr[i+1] - arr[i] != d)
+        {
+            return false;
+        }
+    }
+    return true;
+    }
+
+
+
+int main() {
+    int size;
+    std::cout << "enter size: ";
+    std::cin >> size;
+    if (size<3){size = 3;}
+    int arr[size];
+    std::cout << "enter "<< size <<" nubers: \n";
+    for(int i=0;i<size;i++){
+        std::cout << "enter a nuber: ";
+        std::cin >> arr[i];
+    }
+    if(IsArithmeticProgression(arr,size)){
+        std::cout << "This is an Arithmetic Series!";
+    }else{
+        std::cout << "This is NOT an Arithmetic Series!";
+    }
+
+    return 0;
+}
